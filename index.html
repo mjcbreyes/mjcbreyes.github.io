@@ -9,11 +9,12 @@
 <body>
     <header>
         <div class="logo">
-            <a href="#home">Your Logo</a>
+            <a href="#home"><img src="yes-logo.png" width="auto"></a>
         </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -26,6 +27,7 @@
             <button class="close-btn" aria-label="Close menu">&times;</button>
             <ul>
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -34,21 +36,51 @@
 
     <section id="home" class="hero-section">
         <div class="hero-intro">
-            <h1>Home Section</h1>
-            <p>Welcome to my portfolio!</p>
+            <h1>Say YES to Yes Creatives!</h1>
+            <p>Creating beautiful and engaging experiences through interaction and visual design.</p>
+            <button class="contact-intro-btn">Get Started</button>
         </div>
-    </section>
+    </section>    
 
     <section id="about" class="about-me">
         <div class="about-intro">
-            <h2>About Me</h2>
-            <p>Learn more about me and my background.</p>
+            <h2>Kamusta? How are you?</h2>
+            <p>Jez is a Multimedia Designer born and raised in the Philippines and based in Calgary, Alberta. With her industry experience, she focuses on creating beautiful and engaging experiences through interaction and visual design.</p>
+        </div>
+        <div class="card-wrapper">
+            <div class="card about-section introducing-me">
+                <div class="card-header">
+                    <h3>Introducing Me</h3>
+                </div>
+                <div class="card-content">
+                    <p>My journey into multimedia design began in the culinary arts in the Philippines, where I discovered my passion for creating experiences. This passion led me to move to Canada and study at the Southern Alberta Institute of Technology (SAIT), focusing on branding/rebranding, UI/UX design, and video editing. My unique background has given me a distinct perspective on design, combining creativity with technical expertise.</p>
+                    <img class="introducing-me-img" src="https://via.placeholder.com/300x300" alt="Introduction">
+                </div>
+            </div>
+            <div class="card about-section think">
+                <div class="card-header">
+                    <h3>How I Think?</h3>
+                </div>
+                <div class="card-content">
+                    <p>My design process is straightforward, beginning with understanding the client's vision and followed by thorough research and collaboration. I prioritize user-centered design, meticulous attention to detail, and storytelling, ensuring every project is intuitive and impactful. Effective communication and teamwork are at the heart of my approach, making sure each project aligns with client goals and resonates with their audience.</p>
+                    <img class="think-img" src="https://via.placeholder.com/300x300" alt="Thinking">
+                </div>
+            </div>
+            <div class="card about-section interests">
+                <div class="card-header">
+                    <h3>My Cup of Tea</h3>
+                </div>
+                <div class="card-content">
+                    <p>Inspired by nature, technology, and diverse cultural experiences, I continuously explore new techniques and styles through personal projects. My transition from culinary arts to multimedia design has enriched my creative outlook. Looking ahead, I aim to capture experiences and memories through timeless designs, taking on projects that challenge me and leave a lasting impression.</p>
+                    <img class="interests-img" src="https://via.placeholder.com/300x300" alt="Interests">
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="portfolio" class="portfolio-section">
         <div class="portfolio-intro">
-            <h2>Portfolio</h2>
+            <h2>This is my style!</h2>
             <p>Explore my work and projects.</p>
         </div>
         <div class="portfolio-items">
@@ -69,21 +101,10 @@
 
     <section id="contact" class="contact">
         <div class="contact-intro">
-            <h2>Contact</h2>
+            <h1>What are you waiting for?</h1>
             <p>If you would like to catch up to discuss any opportunities please send me a message.</p>
+            <button onclick="location.href='mailto:ma.jezreelchaimontraereyes@gmail.com'">Email Us</button>
         </div>
-        <form id="contact-form" action="contact.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Send</button>
-        </form>
     </section>
 
     <!-- Scroll to Top Button -->
