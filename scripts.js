@@ -1,65 +1,68 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const overlay = document.querySelector('.overlay');
-    const mobileNav = document.querySelector('.mobile-nav');
-    const closeBtn = document.querySelector('.close-btn');
-    const scrollToTopBtn = document.querySelector('.scroll-to-top');
-    const portfolioSection = document.querySelector('#portfolio');
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const overlay = document.querySelector(".overlay");
+    const mobileNav = document.querySelector(".mobile-nav");
+    const closeBtn = document.querySelector(".close-btn");
+    const navLinks = document.querySelectorAll(".mobile-nav ul li a");
+    const scrollToTopBtn = document.querySelector(".scroll-to-top");
+    const getStartedButton = document.querySelector(".contact-intro-btn");
+    const contactSection = document.querySelector("#contact");
 
-    // Toggle mobile navigation menu
-    menuToggle.addEventListener('click', () => {
-        overlay.style.display = 'block';
-        mobileNav.classList.add('open');
-        portfolioSection.style.display = 'none'; // Hide portfolio when mobile nav is open
+    // Toggle mobile navigation
+    menuToggle.addEventListener("click", function () {
+        mobileNav.classList.toggle("open");
     });
 
-    closeBtn.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        overlay.style.display = 'none';
-        portfolioSection.style.display = 'block'; // Show portfolio when mobile nav is closed
+    // Close mobile navigation
+    closeBtn.addEventListener("click", function () {
+        mobileNav.classList.remove("open");
     });
 
-    document.querySelectorAll('.mobile-nav ul li a').forEach(navLink => {
-        navLink.addEventListener('click', () => {
-            mobileNav.classList.remove('open');
-            overlay.style.display = 'none';
-            portfolioSection.style.display = 'block'; // Show portfolio when mobile nav link is clicked
+    // Close mobile navigation on nav link click
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            mobileNav.classList.remove("open");
         });
     });
 
-    // Show scroll-to-top button on scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            scrollToTopBtn.style.display = 'block';
+    // Show/Hide scroll to top button and portfolio item animation
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopBtn.style.display = "flex";
         } else {
-            scrollToTopBtn.style.display = 'none';
+            scrollToTopBtn.style.display = "none";
         }
-    });
 
-    // Scroll to top functionality
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Fade-in and fade-out portfolio items
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-    const checkIfInView = () => {
-        const windowHeight = window.innerHeight;
-
+        const portfolioItems = document.querySelectorAll(".portfolio-item");
         portfolioItems.forEach(item => {
             const rect = item.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                item.classList.add('in-view');
-                item.classList.remove('out-of-view');
+            if (rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+                item.classList.add("in-view");
+                item.classList.remove("out-of-view");
             } else {
-                item.classList.add('out-of-view');
-                item.classList.remove('in-view');
+                item.classList.add("out-of-view");
+                item.classList.remove("in-view");
             }
         });
-    };
+    });
 
-    checkIfInView();
+    // Scroll to top button click event
+    scrollToTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 
-    window.addEventListener('scroll', checkIfInView);
+    // Smooth scroll to Contact section when "Get Started" button is clicked
+    getStartedButton.addEventListener("click", function () {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+    });
+
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('click', function() {
+            card.classList.toggle('active');
+        });
+    });
 });
