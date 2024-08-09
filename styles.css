@@ -199,7 +199,8 @@ a {
     align-items: center;
     margin: 0;
     padding: 50px;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     /* background-color: rgba(236, 226, 177, 0.1) */
 }
 
