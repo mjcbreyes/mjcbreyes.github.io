@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Show/Hide scroll to top button and portfolio item animation
+    // Show/hide scroll to top button and portfolio item animation
     window.addEventListener("scroll", function () {
         if (window.scrollY > 200) {
             scrollToTopBtn.style.display = "flex";
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Scroll to top button click event
+    // Scroll to top button click
     scrollToTopBtn.addEventListener("click", function () {
         window.scrollTo({
             top: 0,
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Smooth scroll to Contact section when "Get Started" button is clicked
+    // Smooth scroll to contact section when get started button is clicked
     getStartedButton.addEventListener("click", function () {
         contactSection.scrollIntoView({ behavior: "smooth" });
     });
