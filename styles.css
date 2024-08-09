@@ -183,6 +183,44 @@ a {
     margin-bottom: 4em;
 }
 
+.hero-section {
+    background-image: url('https://www.dropbox.com/scl/fi/vr0p7as0a2yr4m3m91n5e/Jez_DIAL_1.gif?rlkey=ku282dmk1keyrl5p0zjr0e1i9&st=16pau6lt&raw=1');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+}
+
+.hero-section .hero-intro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 50px;
+    backdrop-filter: blur(5px);
+    /* background-color: rgba(236, 226, 177, 0.1) */
+}
+
+.hero-intro h1 {
+    /* color: #F1C13D; */
+    color: var(--header-text-color);
+}
+
+/* .hero-intro h1 {
+    text-shadow: 
+    -0.75px -0.75px 1px var(--header-text-color),  
+    0.75px -0.75px 1px var(--header-text-color),   
+    -0.75px 0.75px 1px var(--header-text-color),   
+    0.75px 0.75px 1px var(--header-text-color);
+
+} */
+
+.hero-intro p {
+    color: var(--link-color);
+}
+    
 .hero-section img,
 .about-me img {
     max-width: 100%;
@@ -224,7 +262,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height:100vh;
 }
 
 .hero-intro,
@@ -234,7 +272,6 @@ a {
 }
 
 /* About Me */
-
 .about-me {
     padding: 2em;
 }
@@ -243,11 +280,12 @@ a {
     display: flex;
     flex-direction: column;
     gap: 2em;
+    justify-content: center;
 }
 
 .card {
     background: var(--main-bg-color);
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -413,6 +451,12 @@ textarea:focus-within::placeholder {
     transition: all 0.3s ease;
 }
 
+.contact-intro-btn {
+    border: 0;
+    background-color: var(--header-text-color);
+    color: var(--footer-bg-color);
+}
+
 .contact-intro-btn::after {
     content: "Get started";
 }
@@ -511,11 +555,30 @@ footer p {
 }
 
 /* Responsive Styles */
+@media (min-width: 1600px) {
+    .card {
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 30px;
+    }
+}
+
+@media (min-width: 1199px) and (max-width: 1599px) {
+    .card {
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 30px;
+    }
+    .card p {
+        text-align: left;
+    }
+}
+
 @media (max-width: 1200px) {
     .card-content p {
         padding: 0;
         margin-top: 10px;
-        text-align: center;
+        text-align: left;
     }
     h1 {
         font-size: 80px; /* Responsive font size */
@@ -548,6 +611,7 @@ footer p {
     .card-content p {
         padding: 0;
         margin-top: 10px;
+        text-align: center;
     }
     
     .card-content img {
